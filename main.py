@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
 app = FastAPI(
     title="Nandani's micro service",
@@ -14,3 +15,14 @@ async def index():
 @app.get("/say_my_name")
 async def sayName():
     return {"name": "Nandani Thakur"}
+
+@app.get("/home_page")
+async def serveHomePage():
+    return HTMLResponse("""
+<html>
+    <body>
+        <h1>This is a home page</h1><br/>
+        <p> welcome user</p>
+    </body>
+</html>
+""")
