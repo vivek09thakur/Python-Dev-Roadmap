@@ -3,7 +3,8 @@ from fastapi.responses import HTMLResponse
 
 app = FastAPI(
     title="Nandani's micro service",
-    summary="Says a hello to user"
+    summary="Says a hello to user",
+    docs_url="/docs"
 
 )
 
